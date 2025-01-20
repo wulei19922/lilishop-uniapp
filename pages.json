@@ -387,6 +387,13 @@
 					"style": {
 						"navigationBarTitleText": "订单跟踪"
 					}
+				},
+				{
+					"path" : "pointTransform/pointTransform",
+					"style" : 
+					{
+						"navigationBarTitleText" : ""
+					}
 				}
 
 			]
@@ -718,12 +725,12 @@
 						"navigationBarTitleText": "订单详情"
 					}
 				},
-				{
-					"path": "deliverDetail",
-					"style": {
-						"navigationBarTitleText": "物流详情"
-					}
-				},
+				// {
+				// 	"path": "deliverDetail",
+				// 	"style": {
+				// 		"navigationBarTitleText": "物流详情"
+				// 	}
+				// },
 				{
 					"path": "evaluate/evaluateDetail",
 					"style": {

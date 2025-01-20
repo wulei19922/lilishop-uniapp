@@ -41,6 +41,7 @@ export default {
       count: {
         loadStatus: "more",
       },
+	  pointClass:"",
       pointList: [], //积分数据集合
       params: {
         pageNumber: 1,
@@ -50,7 +51,9 @@ export default {
     };
   },
 
-  onLoad() {
+  onLoad(options) {
+	console.log("积分类型为：：",options.pointClass)
+	this.pointClass=options.pointClass
     this.initPointData();
     this.getList();
   },
@@ -71,7 +74,7 @@ export default {
       uni.showLoading({
         title: "加载中",
       });
-      getPointsData(params).then((res) => {
+      getPointsData(params,this.pointClass).then((res) => {
          if (this.$store.state.isShowToast){ uni.hideLoading() };
         if (res.data.success) {
           let data = res.data.result.records;
@@ -90,7 +93,7 @@ export default {
      * 获得累计积分使用
      */
     initPointData() {
-      getMemberPointSum().then((res) => {
+      getMemberPointSum(this.pointClass).then((res) => {
         this.pointData = res.data.result;
       });
     },

@@ -101,9 +101,9 @@ export function receiveCoupons(couponId) {
  * @param params
  * @returns {AxiosPromise}
  */
-export function getPointsData(params) {
+export function getPointsData(params,pointClass) {
   return http.request({
-    url: "member/memberPointsHistory/getByPage",
+    url: "member/memberPointsHistory/getByPage/"+pointClass,
     method: Method.GET,
     needToken: true,
     params,
@@ -441,9 +441,9 @@ export function getCouponsNum() {
  * 获取会员积分VO
  * @param
  */
-export function getMemberPointSum() {
+export function getMemberPointSum(pointClass) {
   return http.request({
-    url: `member/memberPointsHistory/getMemberPointsHistoryVO`,
+    url: `member/memberPointsHistory/getMemberPointsHistoryVO/`+pointClass,
     method: Method.GET,
   });
 }

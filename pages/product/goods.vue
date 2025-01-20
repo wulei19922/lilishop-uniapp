@@ -135,6 +135,25 @@
               </view>
             </view>
           </view>
+		  
+		  <view class="card-box">
+		    <view class="card-flex" @click="shutMask(1)">
+		      <view class="card-title"> 积分 </view>
+		      <view class="card-content">
+		        <span v-if="PromotionList && emptyPromotion()">可获得370A积分</span>
+		        <span v-else>
+					可获得A积分：
+					{{
+					  $options.filters.goodsFormatPrice(goodsDetail.price)[0]
+					}}
+					
+				</span>
+		      </view>
+		      <view class="card-bottom">
+		        <u-icon name="more-dot-fill">11</u-icon>
+		      </view>
+		    </view>
+		  </view>
 
           <view class="card-box">
             <view class="card-flex" @click="shutMask(1)">

@@ -10,7 +10,12 @@
 			  <view>地址管理</view>
 			</view>
 			
-			<view class="interact-item" @click="navigateTo('/pages/mine/myTracks')">
+			<view class="interact-item" @click="navigateTo('/pages/mine/pointTransform/pointTransform')">
+			  <image src="/static/mine/logistics.png" mode=""></image>
+			  <view>积分兑换</view>
+			</view>
+			
+			<!-- <view class="interact-item" @click="navigateTo('/pages/mine/myTracks')">
 			  <image src="/static/mine/logistics.png" mode=""></image>
 			  <view>我的足迹</view>
 			</view>
@@ -25,35 +30,35 @@
 			</view> -->
 		
 		
-			<view class="interact-item" @click="navigateTo('/pages/mine/myCollect')">
+		<!-- 	<view class="interact-item" @click="navigateTo('/pages/mine/myCollect')">
 			  <image src="/static/mine/myfavorite.png" mode=""></image>
 			  <view>我的关注</view>
-			</view>
+			</view> -->
 			
 			
 			
-			<view class="interact-item" @click="navigateTo('/pages/mine/point/myPoint')">
+		<!-- 	<view class="interact-item" @click="navigateTo('/pages/mine/point/myPoint')">
 			  <image src="/static/mine/mypoint.png" mode=""></image>
 			  <view>我的积分</view>
-			</view>
+			</view> -->
 			
-			<view class="interact-item" @click="distribution">
+		<!-- 	<view class="interact-item" @click="distribution">
 			  <image src="/static/mine/distribution.png" mode=""></image>
 			  <view>我的分销</view>
 			</view>
+			 -->
 			
-			
-			
+	<!-- 		
 			<view class="interact-item" @click="navigateTo('/pages/order/complain/complainList')">
 			  <image src="/static/mine/shensu.png" mode=""></image>
 			  <view>我的投诉</view>
-			</view>
+			</view> -->
 				   
-			<view class="interact-item" @click="navigateTo('/pages/cart/coupon/myCoupon')">
+	<!-- 		<view class="interact-item" @click="navigateTo('/pages/cart/coupon/myCoupon')">
 			  <image src="/static/mine/mycoupon.png" mode=""></image>
 			  <view>优惠券</view>
-			</view>
-			
+			</view> -->
+		
 		
 			        
 					
@@ -61,8 +66,13 @@
             <image src="/static/mine/sign.png" mode=""></image>
             <view>每日签到</view>
           </view>
+		  
+		  <view class="interact-item" @click="lottery()">
+		    <image src="/static/mine/sign.png" mode=""></image>
+		    <view>抽奖</view>
+		  </view>
          
-         
+         <!-- 
        
           
 
@@ -100,7 +110,7 @@
           <view class="interact-item" @click="navigateTo('/pages/mine/set/setUp')">
             <image src="/static/mine/setting.png" mode=""></image>
             <view>设置</view>
-          </view>
+          </view> -->
         
 		  
         </view>
@@ -143,7 +153,12 @@ export default {
 				this.handleNavigate(url)
 			}
     },
-	
+	lottery (){
+		let path='http://127.0.0.1:8090/game_point.html';
+		uni.navigateTo({
+		  url: "/pages/tabbar/home/web-view?src=" + path
+		});
+	},
 	linkMsgDetail(){
 		uni.navigateTo({
 				url: `/pages/mine/im/list`,
